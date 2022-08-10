@@ -13,6 +13,7 @@ export const ContactList = () => {
 
   /////////////////////////
 
+  const loader = useSelector(state => state.loading);
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
@@ -30,6 +31,7 @@ export const ContactList = () => {
 
   return (
     <ul className={styles.contact__list}>
+      {loader && <h2>Loading...</h2>}
       {contactList.map(({ id, name, number }) => {
         return (
           <li className={styles.contact__item} key={id}>
