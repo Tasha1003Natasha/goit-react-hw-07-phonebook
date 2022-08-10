@@ -14,7 +14,7 @@ export const ContactList = () => {
   /////////////////////////
 
   useEffect(() => {
-    if (dispatch !== 0) dispatch(fetchContacts());
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   ///////////////////////////
